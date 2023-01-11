@@ -1,12 +1,14 @@
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Header/Navbar';
-//import ItemDetailContainer from './components/Main/ItemDetailContainer';
 import ItemListContainer from './components/Main/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Main/Cart';
 import ItemDetailContainer from './components/Main/ItemDetailContainer';
+
+
 const App = () => {
+    
     return (
         <BrowserRouter>
             <Navbar />

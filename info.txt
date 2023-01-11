@@ -1,0 +1,53 @@
+git init : inicializa un repo nuevo (.git) donde tire el comando
+
+npm  { install | i } :
+
+npm i 
+
+
+
+
+HOOK :  son funciones que nos sirven para meter una nueva funcionalidad en un componentes
+
+
+
+function useSate(init){
+
+    const resultado = []
+
+    return resultado 
+
+}
+
+
+COMPONENTES : Son funciones en mayuscula con retorno usualmente en jsx que pueden reaccionar a cambios y recargar su cuerpo (ciclo de vida)
+
+
+MONTADO
+
+ACTUALIZACION
+
+DESMONTADO
+
+
+
+function PokemonContainer (){
+
+    useEffect()
+
+
+    return (
+        <></>
+    )
+}
+
+
+
+
+import {useParams} from "react-router-dom"
+
+
+const res = useParams() //
+
+
+

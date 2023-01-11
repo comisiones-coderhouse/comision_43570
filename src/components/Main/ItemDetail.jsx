@@ -2,7 +2,26 @@ import React from 'react';
 import Contador from './Contador';
 
 const ItemDetail = ({ item }) => {
+    
     const discount = item.price - (item.price * item.descuento) / 100;
+
+    function handleClick(e){
+        console.log(e)
+        //e.target
+        //e.preventDefault
+        //e.stopPropagation
+        //e.key
+    }
+
+
+    //const btn = document.querySelector("button")
+    //document.addEventListener("click",handleClick())
+    
+    //btn.addEventListener("click",handleClick)
+    //btn.addEventListener("click",()=>{})
+    //btn.addEventListener("click",function(){})
+    
+
     return (
         <div className="container-page container-detail">
             <img src={item.img} alt="detail" />
@@ -22,7 +41,8 @@ const ItemDetail = ({ item }) => {
                     Hasta <strong>12</strong> cuotas sin interes de
                     <strong> ${item.price / 12}</strong>
                 </h3>
-                <button className="metodos-pagos">
+                <input type="text"/>
+                <button className="metodos-pagos" onClick={handleClick}>
                     Conocé todos los métodos de pagos
                 </button>
                 <hr />
