@@ -5,31 +5,33 @@ import ItemListContainer from './components/Main/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart from './components/Main/Cart';
 import ItemDetailContainer from './components/Main/ItemDetailContainer';
-
+import CustomProvider from "./components/Context/CustomProvider"
 
 const App = () => {
-    
+
     return (
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <ItemListContainer saludo="Bienvenidos al mejor sitio para comprar 😎" />
-                    }
-                />
-                <Route
-                    path="/categoria/:categoryName"
-                    element={
-                        <ItemListContainer saludo="Bienvenidos al mejor sitio para comprar 😎" />
-                    }
-                />
-                <Route path="/detail/:id" element={<ItemDetailContainer />} />
-                <Route path="/cart" element={<Cart />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+        <CustomProvider>
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <ItemListContainer saludo="Bienvenidos al mejor sitio para comprar 😎" />
+                        }
+                    />
+                    <Route
+                        path="/categoria/:categoryName"
+                        element={
+                            <ItemListContainer saludo="Bienvenidos al mejor sitio para comprar 😎" />
+                        }
+                    />
+                    <Route path="/detail/:id" element={<ItemDetailContainer />} />
+                    <Route path="/cart" element={<Cart />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </CustomProvider>
     );
 };
 

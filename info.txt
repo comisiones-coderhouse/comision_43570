@@ -51,3 +51,37 @@ const res = useParams() //
 
 
 
+
+
+
+Pasar datos de un Componente Hijo(ch) a un Componente Padre(cp) / State Uplifting : 
+
+
+1- hay que hacer una funcion en el cp
+2- hay que enviarsela al ch (por props)
+3- el ch decide el momento en que quiere ejecutar la funcion que reciba (callback)
+4- cuando la ejecute, le puede pasar lo que quiera 
+5- el cp recibe el dato y lo usa como quiera
+
+
+
+
+PATRON CONTAINER 
+PATRON PROVIDER 
+
+IMPLEMENTACION DE CONTEXT API
+
+1- crear el contexto
+2- sacarle el provider
+3- hacer un componente propio
+4- usar el provider en mi componente customizado
+5- uso mi componente customizado en el lugar que yo quiera, a partir de ahi la info del contexto se comparte hacia abajo
+
+
+
+CONSUMIR EL VALOR DEL CONTEXTO 
+
+1- traer el hook useContext
+2- traer el objeto contexto (el que obtuve de la createContext)
+3- ejecutar el hook pasandole como parametro el objeto contexto
+4- profit ???

@@ -7,7 +7,6 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
 
     const valor = useParams();
-    console.log(valor);
 
     useEffect(() => {
         const getProduct = () => {
@@ -17,7 +16,7 @@ const ItemDetailContainer = () => {
                 );
                 setTimeout(() => {
                     res(productoEncontrado);
-                }, 500);
+                }, 1000);
             });
         };
 
@@ -30,7 +29,7 @@ const ItemDetailContainer = () => {
             });
     }, []);
 
-    return <ItemDetail item={item} />;
+    return <>{item.id ? <ItemDetail item={item} /> : <p>Cargando...</p>}</>;
 };
 
 export default ItemDetailContainer;

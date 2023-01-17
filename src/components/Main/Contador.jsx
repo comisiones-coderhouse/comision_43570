@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
-const Contador = ({ stock }) => {
+
+const Contador = ({ stock , handleAdd }) => {
+
     const [cantidad, setCantidad] = useState(1);
 
     const sumar = () => {
@@ -15,6 +17,10 @@ const Contador = ({ stock }) => {
         }
     };
 
+    const handleConfirmar = () => {
+        handleAdd(cantidad)
+    }
+
     return (
         <div className="container-counter">
             <div className="counter">
@@ -24,7 +30,7 @@ const Contador = ({ stock }) => {
                     +
                 </button>
             </div>
-            <button className="add-to-cart">Agregar al carrito</button>
+            <button className="add-to-cart" onClick={handleConfirmar}>Confirmar</button>
         </div>
     );
 };
