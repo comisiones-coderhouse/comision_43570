@@ -85,3 +85,76 @@ CONSUMIR EL VALOR DEL CONTEXTO
 2- traer el objeto contexto (el que obtuve de la createContext)
 3- ejecutar el hook pasandole como parametro el objeto contexto
 4- profit ???
+
+
+
+    //Primitivo (por valor)
+    //const a = true
+    /* const [a,setA] = useState("")
+
+    const b = a
+    b = nuevoValor
+    setA(b)
+ */
+
+
+
+    //Object (por referencia)
+    ///const [a, setA] = useState([])
+
+
+    //a[a.length + 1] = nuevoValor
+    //a.push(nuevoValor)
+    //setA(a.push(nuevoValor))
+    //const b = a 
+    //b.push(nuevoValor)
+    //const copia = a.splice()
+
+    //const copia = [...a]
+    //const copia = a.slice(0)
+    //const copia = a.concat([])
+    //const copia = JSON.parse(JSON.stringify(a))
+    //const copia = Object.assign([], a)
+
+    //OPERADOR REST/SPREAD (...)
+
+
+    /*   function foo(...params){
+          console.log(params)
+      }
+  
+      foo(1,2,3)
+  
+   */
+
+
+    //const arr = [1, 2, 3]
+
+    //const arr2 = arr
+
+    //const arr2 = [ arr ]
+    //const arr2 = [ 1,2,3 ]
+
+    //const arr2 = [...arr]
+
+
+    //const obj = {x:1,y:2}
+    //const ob2 = obj2
+    //const obj2 = {...obj}
+
+
+
+
+
+
+
+
+FIREBASE : Es una plataforma de google que nos permite acceder a varios servicios web
+
+CONSOLA DE FIREBASE : Es solamente la primera pagina que se ve cuando se entra al sitio de firebase
+
+PROYECTO : Es el lugar donde puedo administrar los servicios (activacion/modoficacion/baja)
+
+SERVICIOS : Cada uno de los recursos que podemos usar dentro del proyecto como el de Auth , DB , Storage , Hosting , etc
+
+APP : Es el acceso privado desde el exterior a los servicios a traves de keys

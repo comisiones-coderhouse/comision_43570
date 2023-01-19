@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const contexto = createContext()
 const { Provider } = contexto
@@ -6,25 +6,31 @@ const { Provider } = contexto
 
 const CarritoProvider = ({ children }) => {
 
-    const [carrito,setCarrito] = useState([])
-    const [total,setTotal] = useState(0)
-    const [cantidad,setCantidad] = useState(0)
-    
-    const agregarProducto = (producto,cantidad) => {
+    const [carrito, setCarrito] = useState([])
+    const [total, setTotal] = useState(0)
+    const [cantidad, setCantidad] = useState(0)
 
-        //carrito === [{id:1,title : "pantalon",cantidad:1}]
+    const agregarProducto = (producto, cantidad) => {
 
-        //const copia = producto 
-        producto.cantidad = cantidad
+        //producto.cantidad = cantidad
+        //const copia = carrito 
+        const nuevoEstado = [...carrito]
+        nuevoEstado.push(producto)
 
-        setCarrito([producto])
+        //const nuevoEstado = []
+        //nuevoEstado.push(producto)
+
+        setCarrito(nuevoEstado)
+
         setTotal(producto.precio * cantidad)
         setCantidad(cantidad)
     }
 
-    const eliminarProducto = () => {}
+    const eliminarProducto = () => { }
 
-    const vaciarCarrito = () => {}
+    const vaciarCarrito = () => { 
+        setCarrito([])
+    }
 
     const estaEnCarrito = () => {
         //retorna true o false dependiendo si un producto dado esta o no en carrito
