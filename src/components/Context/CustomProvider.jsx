@@ -21,6 +21,7 @@ const CarritoProvider = ({ children }) => {
         //nuevoEstado.push(producto)
 
         setCarrito(nuevoEstado)
+        //const pedidoGuardarProdACarrito = addDoc()
 
         setTotal(producto.precio * cantidad)
         setCantidad(cantidad)

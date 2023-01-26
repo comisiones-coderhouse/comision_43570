@@ -158,3 +158,22 @@ PROYECTO : Es el lugar donde puedo administrar los servicios (activacion/modofic
 SERVICIOS : Cada uno de los recursos que podemos usar dentro del proyecto como el de Auth , DB , Storage , Hosting , etc
 
 APP : Es el acceso privado desde el exterior a los servicios a traves de keys
+
+
+https://firebase.google.com/docs/reference/js?authuser=0&hl=en
+
+
+CRUD - ABM
+
+getDocs - getDoc - addDoc - deleteDoc - updateDoc
+
+
+fetch(url)
+.then(res => res.json())
+.then(data => console.log(data))
+
+getDocs(query)
+.then()
+
+getDoc(query)
+.then()
