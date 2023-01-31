@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 import { productsCollection } from '../../firebaseConfig';
 import { getDocs , query , where } from "firebase/firestore"
+import { toast } from 'react-toastify';
 
 //getDocs(Query)
 //getDocs(CollectionReference|Query)
@@ -17,24 +18,34 @@ const ItemListContainer = ({ saludo }) => {
     const { categoryName } = useParams();
 
     useEffect(() => {
-        const getProducts = () => {
 
+        const getProducts = () => {
+            
             //const pedido = getDocs(productsCollection)
 
-            const filtro = query(productsCollection,where("categoria","==",categoryName))
-            const pedidoPorCategoria = getDocs(filtro)
+                let filtro 
 
-            pedidoPorCategoria
-                .then((resultado) => {
-                    const productos = resultado.docs.map((doc) => {
-                        return { id : doc.id , ...doc.data() }
+                if(categoryName){
+                 filtro = query(productsCollection,where("categoria","==",categoryName))
+                }else {
+                    filtro = productsCollection
+                }
+
+                const pedidoPorCategoria = getDocs(filtro)
+    
+                pedidoPorCategoria
+                    .then((resultado) => {
+                        const productos = resultado.docs.map((doc) => {
+                            return { id : doc.id , ...doc.data() }
+                        })
+                        toast.info("soy una notificacion!")
+                        setItems(productos)
                     })
-                    setItems(productos)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-        };
+                    .catch((error) => {
+                        toast("Hubo un error!")
+                        console.log(error)
+                    })
+        }
 
         getProducts()
 

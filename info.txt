@@ -177,3 +177,66 @@ getDocs(query)
 
 getDoc(query)
 .then()
+
+
+
+
+1- build
+2- deploy
+3- hosting (?)
+4- .env
+5- markdown (.md)
+
+
+Entrega : 
+
+1- El proyecto deberia constar de : 
+    * el codigo fuente MENOS archivos inutilizados
+    * un archivo README.md con la documentacion de la app
+    * una representacion multimedia del proyecto/flujo de compra : GIF/video/Imagenes en doc/deploy
+
+
+Hosting sugeridos : 
+    *  Github Pages
+    *  Firebase Hosting
+    *  Netlify
+    *  Vercel
+
+Documentacion : 
+    * Descripcion del proyecto 
+    * Descripcion/listado de las herramientas/tecnologias utilizadas
+    * Modo de uso/instalacion
+    * Link al deploy
+
+    * Descripcion del programador/a
+    * Todos
+
+
+Errores generales : 
+
+1 - Saquen los console.logs
+2 - Saquen los Comentarios 
+3 - Saquen archivos/componentes/variables/props innecesario/as
+
+
+
+Componentes :
+
+App : Contiene toda la aplicacion
+NavBar : Contiene los links y el widget
+CartWidget : Contiene el icono mas la logica del contexto
+ItemListContainer : Contiene la logica condicional del pedido de productos
+ItemList : contiene la logica del listato/mapeo
+Item : un solo producto/tarjeta
+ItemDetailContainer : Contiene la logica condicional del pedido del detalle de un producto
+ItemDetail : muestra el detalle completo, recibe por props la info y por el contador la cantidad
+ItemCount :  tiene la logica de la cantidad de cada producto 
+Cart : tiene el mapeo del carrito y el proceso final de compra
+CartProvider : tiene la logica completa de toda la funcionalidad del carrito con sus cambios
+
+Rutas : 
+
+/ : ItemListContainer
+/categoria/:id : ItemListContainer
+/item/:id : ItemDetailContainer
+/cart : Cart

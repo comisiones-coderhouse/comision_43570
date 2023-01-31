@@ -14,7 +14,6 @@ const Cart = () => {
 
     const handleCompra = () => {
         //addDoc 
-
         const compra = {
             usuario: {
                 nombre: "fulano",
@@ -29,7 +28,9 @@ const Cart = () => {
 
         pedido
             .then((resultado) => {
+                console.log(resultado.id)
                 console.log(resultado)
+                //console.log(resultado.data())
             })
             .catch((error) => {
                 console.log(error)
